@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="bg-class">
+    <h1>Simple, traffic-based pricing</h1>
+    <p><span class="c1">Sign-up for our 30-day trial.</span> <span class="c2">No credit card required.</span></p>
+    <div class="container">
+
+        <div class="topview">
+          <div class="pageviews"><b>100k Pageviews</b></div>
+          <div class="range-view1" >
+            <input type="range" min="1.00" max="30.00" step="" value="1" id="slider1" class="slider1" >
+          </div>
+
+          
+          <div class="counter-month">
+            <div class="counter" id="counter"></div>
+            <div class="month">/ month</div>
+          </div>
+        </div>
+
+        <div class="middle-view">
+          <div class="range-view">
+            <input type="range" min="1.00" max="30.00" step="" value="1" id="slider" >
+            <!-- <div id="selector">
+                <div class="selectorbtn"></div>
+            </div> -->
+          </div>
+          <div class="range-content">
+
+            <div class="left-content">
+              <div class="monthly-billing">
+                Monthly  Billing
+              </div> 
+            </div>
+
+            <div class="slider-div">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+            </div>
+            
+
+            <div class="right-content">
+              <div class="yearly-billing">
+                Yearly billing
+              </div>
+              <div class="discount">
+                <!-- 25% discount -->
+              </div>
+            </div>
+            
+            
+            
+
+
+          </div>
+         
+        </div>
+        
+        <div class="horizontal_line"></div>
+
+        <div class="bottom-view">
+            <div class="left-text">
+            <ul>
+              <li class="li-one">Unlimited websites</li>
+              <li class="li-two">100% Data ownership</li>
+              <li class="li-three">Email reports</li>
+            </ul>
+            </div>
+
+            <div class="start-trial">
+              <div class="ft-content">
+                Start my Trial
+              </div>
+
+            </div>
+
+        </div>
+  </div>
+  
+  <script>
+    function setdefault(){
+      var x=0
+      var color = "linear-gradient(to right, hsl(174, 86%, 45%) "+ x+"%" + ",#ddd 0%, #ddd 100%)";
+      slider.style.background=color;
+
+    }
+
+     var output=document.getElementById("counter");
+     var slider=document.getElementById("slider");
+
+
+     output.innerHTML= "$"+slider.value+".00";
+
+
+     slider.oninput=function(){
+      output.innerHTML="$"+this.value+".00";
+     }
+
+     slider.addEventListener("mousemove",function(){
+      var x=slider.value*3.33;
+      var color = "linear-gradient(to right, hsl(174, 86%, 45%) "+ x+"%" + ",#ddd 0%, #ddd 50%)";
+      slider.style.background=color;
+     })
+
+
+
+
+
+
+
+
+
+     function setdefault1(){
+      var x1=0
+      var color1 = "linear-gradient(to right, hsl(174, 86%, 45%) "+ x1+"%" + ",#ddd 0%, #ddd 100%)";
+      slider1.style.background=color1;
+      
+      
+    }
+
+     var output1=document.getElementById("counter");
+     var slider1=document.getElementById("slider1");
+
+
+     output1.innerHTML= "$"+slider1.value+".00";
+
+
+     slider1.oninput=function(){
+      output1.innerHTML="$"+this.value+".00";
+     }
+
+     slider1.addEventListener("touchmove",function(){
+      var x1=slider1.value*3.33;
+      var color1 = "linear-gradient(to right, hsl(174, 86%, 45%) "+ x1 +"%" + ",#ddd 0%, #ddd 50%)";
+      slider1.style.background=color1;
+     })
+
+
+
+
+
+     
+     setdefault();
+     setdefault1();
+  </script>
+    
+  
+  <!-- Sign-up for our 30-day trial. No credit card required. 
+
+  Pageviews
+  $ /month
+
+  Monthly Billing
+  Yearly Billing 25% discount
+
+  Unlimited websites
+  100% data ownership
+  Email reports
+
+  Start my trial -->
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+</html>
